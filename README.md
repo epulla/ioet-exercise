@@ -10,8 +10,6 @@ Input: the name of an employee and the schedule they worked, indicating the time
 
 ## How to run the program locally?
 
----
-
 ### Download
 
 First of all, clone the repository:
@@ -41,8 +39,6 @@ $ python3 ./src/main.py <input-file>
 You can use [data.txt](https://github.com/epulla/ioet-exercise/blob/main/data.txt) as default for your __<input-file>__ or you can create a new txt file with new data
 
 ## How to test it locally?
-
----
 
 [test.py](https://github.com/epulla/ioet-exercise/blob/main/test.py) is the default testing file and you can run it with the following command:
 
