@@ -76,7 +76,9 @@ The main idea of the solution was to apply `Divide and Conquer` approach, so the
 - Comparing schedules.
 - Combining people's schedules to have unique pairs of them to avoid comparing the same element or inverted pairs.
 
-The solution begins by creating a class named __HourRange__ that handles hour ranges easily. The attributes of the class had to be a start hour and end hour in the most simple way. Next, a method was needed to allow us to compare ranges between two instance of this class. This comparison checks if the hour ranges between instances are overlapping, and that can be considered as a coincidence in schedule. This solves the first subproblem.
+The solution begins by creating a class named __HourRange__ that handles hour ranges easily. The attributes of the class had to be a start hour and end hour in the most simple way. Next, a method was needed to allow us to compare ranges between two instance of this class. This comparison checks if the hour ranges between instances are overlapping, and that can be considered as a coincidence in schedule. This was solved using Boolean Algebra: 
+
+> There is HourRangeA and HourRangeB (each of them has its startTime and endTime). There is no overlapping between both hour ranges if neither startTimeA > endTimeB nor endTimeA < startTimeB. The expression is: `not(startTimeA > endTimeB or endTimeA < startTimeB)`, which can be translated to `not(startTimeA > endTimeB) and not(endTimeA < startTimeB)` or, more specifically, `startTimeA <= endTimeB and endTimeA >= startTimeB`.
 
 Second, there was a need to associate an hour range to a day and a person to these hour ranges. A new class was created to solve this, it was named __Schedule__. The attributes were the owner of the schedule and a collection of the days with hour ranges. Then, a method to compare to another Schedule object was created. There were two options for the collection of days with their hour ranges: lists (similar to arrays) or dictionary (similar to Hash Maps). A dictionary (key as day, value as HourRange object) was chosen to avoid index searching or several if-else statementes in code (python does not support switch statements).
 
