@@ -50,7 +50,7 @@ class TestCorrectTimeString(unittest.TestCase):
         """
         Test if the function 'correct_time_string' is correcting a bad format of '<hours>:<minutes>'
         """
-        time1 = "010:00"
+        time1 = "008:00"
         self.assertEqual(correct_time_string(time1), "10:00")
         time2 = " 18:00"
         self.assertEqual(correct_time_string(time2), "18:00")
